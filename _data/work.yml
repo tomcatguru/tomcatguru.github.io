@@ -1,0 +1,8 @@
+- title: FlickrSlide
+  category: iOS 앱
+  description: Flickr 사진을 둘러볼 수 있는 iOS 데모 앱.
+  url: https://github.com/tomcatguru/FlickrSlide
+- title: URLBuilder
+  category: Swift 유틸리티
+  description: 스킴, 호스트, 경로, 쿼리 매개변수를 조합해 URL을 만드는 Swift 도구.
+  url: https://github.com/tomcatguru/URLBuilder

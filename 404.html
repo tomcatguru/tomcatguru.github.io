@@ -1,13 +1,15 @@
 ---
 layout: default
-title: 404 - Page not found
+title: 페이지를 찾을 수 없습니다
 permalink: /404.html
+noindex: true
+sitemap: false
 ---
-
-<div class="text-center">
-  <h1>Whoops, this page doesn't exist.</h1>
-  <h1>Move along. (404 error)</h1>
-  <br/>
-
-  <img src="{{ 'assets/img/404-southpark.jpg' | relative_url }}" />
+<div class="reading">
+  <header class="reading-header">
+    <p class="eyebrow">404</p>
+    <h1>페이지를 찾을 수 없습니다</h1>
+    <p class="page-deck">아카이브에서 찾으시는 글을 확인해 보세요.</p>
+  </header>
+  <a class="button" href="{{ '/archive/' | relative_url }}">아카이브 <span aria-hidden="true">→</span></a>
 </div>

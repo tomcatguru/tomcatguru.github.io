@@ -1,9 +1,45 @@
----
-layout: base
----
+<!doctype html>
+<html lang="{{ site.lang | escape }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title | escape }} · {% endif %}{{ site.title | escape }}</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  {% unless page.noindex %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endunless %}
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+  {% feed_meta %}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#content">본문 바로가기</a>
+  <header class="site-header">
+    <div class="wrap nav-bar">
+      <a class="wordmark" href="{{ '/' | relative_url }}" aria-label="Tom Lee 홈">Tom Lee<span>.</span></a>
+      <nav aria-label="주 메뉴">
+        <ul>
+          <li><a href="{{ '/about/' | relative_url }}"{% if page.url == '/about/' %} aria-current="page"{% endif %}>소개</a></li>
+          <li><a href="{{ '/archive/' | relative_url }}"{% if page.url == '/archive/' %} aria-current="page"{% endif %}>아카이브</a></li>
+          <li><a href="{{ '/tags/' | relative_url }}"{% if page.url == '/tags/' %} aria-current="page"{% endif %}>태그</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<div class="intro-header"></div>
+  <main class="wrap" id="content">
+    {{ content }}
+  </main>
 
-<div role="main" class="container-md">
-  {{ content }}
-</div>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© {{ site.time | date: '%Y' }} {{ site.author.name | escape }}</span>
+      <nav aria-label="외부 링크">
+        <ul>
+          <li><a href="{{ site.github_profile }}">GitHub <span aria-hidden="true">↗</span></a></li>
+          <li><a href="{{ site.medium_profile }}">Medium <span aria-hidden="true">↗</span></a></li>
+          <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

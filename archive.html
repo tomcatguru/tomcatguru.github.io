@@ -1,0 +1,25 @@
+---
+layout: default
+title: 아카이브
+description: 톰리의 개발 노트에 올라온 글을 연도별로 모아봅니다.
+permalink: /archive/
+---
+<div class="reading">
+  <header class="reading-header">
+    <h1>아카이브</h1>
+    <p class="page-deck">모든 글을 연도별로 모았습니다.</p>
+  </header>
+  {% assign posts_by_year = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
+  {% for year in posts_by_year %}
+  <section class="list-section" aria-labelledby="year-{{ year.name }}">
+    <h2 id="year-{{ year.name }}">{{ year.name }}</h2>
+    <ul class="post-list">
+      {% for post in year.items %}
+        {% include post-row.html post=post %}
+      {% endfor %}
+    </ul>
+  </section>
+  {% else %}
+  <p>아직 공개된 글이 없습니다.</p>
+  {% endfor %}
+</div>
