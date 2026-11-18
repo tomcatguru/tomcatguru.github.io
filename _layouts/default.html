@@ -8,7 +8,7 @@
   {% unless page.noindex %}<link rel="canonical" href="{{ page.url | absolute_url }}">{% endunless %}
   {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
   {% feed_meta %}
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
   <a class="skip-link" href="#content">본문 바로가기</a>
