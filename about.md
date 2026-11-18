@@ -6,7 +6,6 @@ permalink: /about/
 ---
 <article class="reading">
   <header class="reading-header">
-    <p class="eyebrow">Software Engineer</p>
     <h1>톰리 소개</h1>
     <p class="page-deck">모바일 앱과 오디오 SDK를 개발해 온 소프트웨어 엔지니어 Tom Lee(이강희)입니다.</p>
   </header>
