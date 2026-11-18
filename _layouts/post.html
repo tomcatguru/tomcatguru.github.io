@@ -3,14 +3,14 @@ layout: default
 ---
 <article class="reading">
   <header class="reading-header">
-    <a class="text-link back-link" href="{{ '/archive/' | relative_url }}"><span aria-hidden="true">←</span> 아카이브</a>
+    <a class="text-link back-link" href="{{ '/archive/' | relative_url }}"><span aria-hidden="true">←</span> All writing</a>
     <h1>{{ page.title | escape }}</h1>
     <div class="post-meta">
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
       <span>{{ site.author.name | escape }}</span>
     </div>
     {% if page.tags.size > 0 %}
-    <ul class="tag-list" aria-label="이 글의 태그">
+    <ul class="tag-list" aria-label="Tags for this post">
       {% for tag in page.tags %}
       <li><a href="{{ '/tags/' | relative_url }}#tag-{{ tag | url_encode | url_encode }}">{{ tag | escape }}</a></li>
       {% endfor %}

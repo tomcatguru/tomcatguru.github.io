@@ -1,17 +1,17 @@
 ---
 layout: default
-title: 태그
-description: 태그별로 개발 노트의 글을 찾아봅니다.
+title: Tags
+description: Browse the garden’s notes by tag.
 permalink: /tags/
 ---
 <div class="reading">
   <header class="reading-header">
-    <h1>태그</h1>
-    <p class="page-deck">관심 있는 태그를 골라 관련 글을 찾아보세요.</p>
+    <h1>Tags</h1>
+    <p class="page-deck">Find notes that share a topic.</p>
   </header>
   {% assign tags = site.tags | sort %}
   {% if tags.size > 0 %}
-  <nav aria-label="태그 목록">
+  <nav aria-label="Tags">
     <ul class="tag-list">
       {% for entry in tags %}
       <li><a href="#tag-{{ entry[0] | url_encode | url_encode }}">{{ entry[0] | escape }} <span>{{ entry[1].size }}</span></a></li>
@@ -29,6 +29,6 @@ permalink: /tags/
     </ul>
   </section>
   {% else %}
-  <p>아직 등록된 태그가 없습니다.</p>
+  <p>There are no tags yet.</p>
   {% endfor %}
 </div>

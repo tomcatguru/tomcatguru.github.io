@@ -2,59 +2,66 @@
 layout: default
 ---
 <section class="hero" aria-labelledby="home-title">
-  <h1 id="home-title">톰리의 개발 노트</h1>
-  <p class="hero-intro">모바일 앱과 오디오 SDK, 오픈소스에 관한 개발 기록입니다.</p>
-  <a class="text-link" href="{{ site.github_profile }}">GitHub <span aria-hidden="true">↗</span></a>
+  <div>
+    <h1 id="home-title">Engineering <em>Garden</em></h1>
+    <p class="hero-intro">I’m Tom Lee, a software engineer. This is where I keep notes on mobile apps, audio SDKs, and open source.</p>
+    <a class="text-link" href="#notes">Explore the notes <span aria-hidden="true">↓</span></a>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <img src="{{ '/assets/img/fern.webp' | relative_url }}" width="640" height="640" alt="">
+  </div>
 </section>
 
-<section class="home-section" aria-labelledby="work-title">
-  <div class="section-heading">
-    <h2 id="work-title">대표 작업</h2>
-  </div>
-  <ul class="project-list">
-    {% for project in site.data.work %}
-    <li>
-      <a class="project-row" href="{{ project.url | escape }}">
-        <div>
-          <h3>{{ project.title | escape }}</h3>
+<div class="garden-grid">
+  <section class="garden-section" id="notes" aria-labelledby="notes-title">
+    <div class="section-heading">
+      <h2 id="notes-title">Notes</h2>
+      <a class="text-link" href="{{ '/archive/' | relative_url }}">All writing <span aria-hidden="true">→</span></a>
+    </div>
+    <ul class="post-list">
+      {% for post in site.posts limit:5 %}
+        {% include post-row.html post=post %}
+      {% else %}
+        <li>No notes have been published yet.</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <section class="garden-section" aria-labelledby="projects-title">
+    <div class="section-heading">
+      <h2 id="projects-title">Projects</h2>
+      <a class="text-link" href="{{ site.github_profile }}">GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <ul class="project-list">
+      {% for project in site.data.work %}
+      <li>
+        <a class="project-row" href="{{ project.url | escape }}">
+          <h3>{{ project.title | escape }} <span aria-hidden="true">↗</span></h3>
+          <span class="project-category">{{ project.category | escape }}</span>
           <p>{{ project.description | escape }}</p>
-        </div>
-        <span class="project-category">{{ project.category | escape }}</span>
-        <span class="project-arrow" aria-hidden="true">↗</span>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+</div>
 
-<section class="home-section" aria-labelledby="recent-title">
+<section class="garden-section" aria-labelledby="topics-title">
   <div class="section-heading">
-    <h2 id="recent-title">최신 글</h2>
-    <a class="text-link" href="{{ '/archive/' | relative_url }}">전체 글 <span aria-hidden="true">→</span></a>
-  </div>
-  <ul class="post-list">
-    {% for post in site.posts limit:5 %}
-      {% include post-row.html post=post %}
-    {% endfor %}
-  </ul>
-</section>
-
-<section class="home-section" aria-labelledby="topics-title">
-  <div class="section-heading">
-    <h2 id="topics-title">주제</h2>
-    <a class="text-link" href="{{ '/tags/' | relative_url }}">태그 보기 <span aria-hidden="true">→</span></a>
+    <h2 id="topics-title">Explore by topic</h2>
+    <a class="text-link" href="{{ '/tags/' | relative_url }}">Browse tags <span aria-hidden="true">→</span></a>
   </div>
   <ul class="tag-list">
-    <li><a href="{{ '/about/' | relative_url }}#mobile">모바일 개발</a></li>
-    <li><a href="{{ '/about/' | relative_url }}#audio">오디오 SDK</a></li>
-    <li><a href="{{ '/about/' | relative_url }}#open-source">오픈소스</a></li>
+    <li><a href="{{ '/about/' | relative_url }}#mobile">Mobile development</a></li>
+    <li><a href="{{ '/about/' | relative_url }}#audio">Audio SDKs</a></li>
+    <li><a href="{{ '/about/' | relative_url }}#open-source">Open source</a></li>
   </ul>
 </section>
 
-<section class="home-section home-about" aria-labelledby="about-title">
+<section class="garden-section home-about" aria-labelledby="about-title">
   <div class="section-heading">
-    <h2 id="about-title">톰리 소개</h2>
-    <a class="text-link" href="{{ '/about/' | relative_url }}">더 알아보기 <span aria-hidden="true">→</span></a>
+    <h2 id="about-title">About Tom</h2>
+    <a class="text-link" href="{{ '/about/' | relative_url }}">Read my bio <span aria-hidden="true">→</span></a>
   </div>
-  <p>Tom Lee는 오디오 SDK와 클로바노트 앱 개발 경험이 있는 소프트웨어 엔지니어입니다.</p>
+  <p>I’ve helped build the CLOVA Note app and audio SDKs for mobile apps.</p>
 </section>

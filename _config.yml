@@ -1,8 +1,8 @@
-title: 톰리의 개발 노트
-description: Tom Lee의 모바일 개발, 오디오 SDK, 오픈소스 기록.
+title: Tom Lee’s Engineering Garden
+description: Notes by Tom Lee on mobile development, audio SDKs, and open source.
 url: https://tomcatguru.github.io
 baseurl: ""
-lang: ko
+lang: en
 timezone: Asia/Seoul
 author:
   name: Tom Lee

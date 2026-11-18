@@ -1,13 +1,13 @@
 ---
 layout: default
-title: 아카이브
-description: 톰리의 개발 노트에 올라온 글을 연도별로 모아봅니다.
+title: Writing
+description: All writing from Tom Lee’s Engineering Garden, grouped by year.
 permalink: /archive/
 ---
 <div class="reading">
   <header class="reading-header">
-    <h1>아카이브</h1>
-    <p class="page-deck">모든 글을 연도별로 모았습니다.</p>
+    <h1>Writing</h1>
+    <p class="page-deck">Notes from the garden, grouped by year.</p>
   </header>
   {% assign posts_by_year = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}
   {% for year in posts_by_year %}
@@ -20,6 +20,6 @@ permalink: /archive/
     </ul>
   </section>
   {% else %}
-  <p>아직 공개된 글이 없습니다.</p>
+  <p>No notes have been published yet.</p>
   {% endfor %}
 </div>
